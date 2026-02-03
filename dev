@@ -30,18 +30,4 @@
     <h2>Links</h2>
     <p>Visit <a href="https://www.example.com" target="_blank">Example.com</a> for more info.</p>
     
-    <h2>Image</h2>
-    <img src="https://via.placeholder.com/150" alt="Placeholder Image">
-    
-    <h2>List</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-    </ul>
-    
-    <footer>
-        <p>&copy; 2026 My Sample Page</p>
-    </footer>
-</body>
-</html>
+
