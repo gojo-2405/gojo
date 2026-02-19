@@ -1,3 +1,3 @@
-# python.py
-print("Hello from Jenkins + Python!")
-           
+a="jenkins"
+b="python"
+print(a+b)    
