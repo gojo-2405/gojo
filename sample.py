@@ -1,3 +1,3 @@
-a=10
-b=20
+a="simple"
+b="python"
 print(a+b)
