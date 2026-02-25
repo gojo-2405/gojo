@@ -1,27 +1,19 @@
-import time
-import random
-from colorama import Fore, Style, init
+import platform
+import socket
+import psutil
+import datetime
 
-# Initialize colorama
-init(autoreset=True)
+def system_report():
+    print("=== SYSTEM HEALTH CHECK REPORT ===")
+    print(f"Timestamp       : {datetime.datetime.now()}")
+    print(f"Hostname        : {socket.gethostname()}")
+    print(f"OS              : {platform.system()} {platform.release()}")
+    print(f"Architecture    : {platform.machine()}")
+    print(f"Python Version  : {platform.python_version()}")
+    print(f"CPU Cores       : {psutil.cpu_count(logical=True)}")
+    print(f"Memory Usage    : {psutil.virtual_memory().percent}%")
+    print(f"Disk Usage      : {psutil.disk_usage('/').percent}%")
+    print("==================================")
 
-message = "Karthick Loves Poojaa"
-colors = [Fore.RED, Fore.MAGENTA, Fore.CYAN, Fore.YELLOW, Fore.GREEN, Fore.BLUE]
-
-def sparkle_text(text):
-    for char in text:
-        color = random.choice(colors)
-        print(color + char, end="", flush=True)
-        time.sleep(0.1)
-    print(Style.RESET_ALL)
-
-def sparkle_animation(text, repeat=3):
-    for _ in range(repeat):
-        sparkle_text(text)
-        time.sleep(0.5)
-
-# Run the animation
-print("\n✨ Sparkling Message ✨\n")
-sparkle_animation(message)
-
-print("\nLove shines brighter than code... 💖")
+if __name__ == "__main__":
+    system_report()
