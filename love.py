@@ -1,34 +1,27 @@
 import time
+import random
+from colorama import Fore, Style, init
 
-# Heart pattern with the message inside
-heart = [
-    "  **     **   ",
-    " ****   ****  ",
-    "****** ****** ",
-    " ***********  ",
-    "  *********   ",
-    "   *******    ",
-    "    *****     ",
-    "     ***      ",
-    "      *       "
-]
+# Initialize colorama
+init(autoreset=True)
 
 message = "Karthick Loves Poojaa"
+colors = [Fore.RED, Fore.MAGENTA, Fore.CYAN, Fore.YELLOW, Fore.GREEN, Fore.BLUE]
 
-# Function to print the heart with animation
-def print_heart():
-    for line in heart:
-        print(line)
-        time.sleep(0.2)
-
-def animate_message(msg):
-    print("\n")
-    for char in msg:
-        print(char, end="", flush=True)
+def sparkle_text(text):
+    for char in text:
+        color = random.choice(colors)
+        print(color + char, end="", flush=True)
         time.sleep(0.1)
-    print("\n")
+    print(Style.RESET_ALL)
 
-# Run the program
-print_heart()
-animate_message(message)
-print("Forever bound by love & logic ❤️")
+def sparkle_animation(text, repeat=3):
+    for _ in range(repeat):
+        sparkle_text(text)
+        time.sleep(0.5)
+
+# Run the animation
+print("\n✨ Sparkling Message ✨\n")
+sparkle_animation(message)
+
+print("\nLove shines brighter than code... 💖")
